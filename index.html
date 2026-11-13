@@ -64,8 +64,8 @@ td:last-child{color:#2c2e30}
 .trk{height:6px;background:var(--paper2);border:1px solid var(--steel);position:relative}
 .trk::before{content:"";position:absolute;left:0;top:-1px;bottom:-1px;width:14%;background:repeating-linear-gradient(45deg,var(--red) 0 3px,#8a5560 3px 6px)}
 .trk.on::before{width:100%;background:var(--red)}
-.trk{cursor:ew-resize;touch-action:none}.trk.on{cursor:default}.trk::after{content:"";position:absolute;inset:-8px 0}
-.trk.set::before{width:var(--v);background:var(--red)}.trk:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+
+.trk.set::before{width:var(--v);background:var(--red)}
 .st{color:#444;font-size:12px}
 .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
 .grid4 .slot{aspect-ratio:1.1}
@@ -145,10 +145,10 @@ td:last-child{color:#2c2e30}
  </div>
  <div class="pn"><div class="ph">Análisis detallado</div>
   <div class="grid4">
-   <div><div class="slot" data-src="https://i.gyazo.com/617a3180caf9cd557561e6784291eadd.png" data-n="Estructura ósea"></div><div class="cap">ESTRUCTURA ÓSEA<i>Normal</i></div></div>
-   <div><div class="slot" data-src="https://i.gyazo.com/025a71300e1f9e6494d1249b56425a5e.png" data-n="Desarrollo muscular"></div><div class="cap">DESARROLLO MUSCULAR<i>Alto</i></div></div>
-   <div><div class="slot" data-src="https://i.gyazo.com/eab0db2bcda313bb7585d12d05ce6648.png" data-n="Movilidad articular"></div><div class="cap">MOVILIDAD ARTICULAR<i>Normal</i></div></div>
-   <div><div class="slot" data-src="https://i.gyazo.com/ae73badb90b385307fd7344391e0b556.png" data-n="Capacidad respiratoria"></div><div class="cap">CAPACIDAD RESPIRATORIA<i>Débil debido a condición asmática</i></div></div>
+   <div><div class="slot" data-src="https://i.gyazo.com/617a3180caf9cd557561e6784291eadd.png" data-n="Estructura ósea"></div><div class="cap">ESTRUCTURA ÓSEA<i>Pendiente de evaluación</i></div></div>
+   <div><div class="slot" data-src="https://i.gyazo.com/025a71300e1f9e6494d1249b56425a5e.png" data-n="Desarrollo muscular"></div><div class="cap">DESARROLLO MUSCULAR<i>Pendiente de evaluación</i></div></div>
+   <div><div class="slot" data-src="https://i.gyazo.com/eab0db2bcda313bb7585d12d05ce6648.png" data-n="Movilidad articular"></div><div class="cap">MOVILIDAD ARTICULAR<i>Pendiente de evaluación</i></div></div>
+   <div><div class="slot" data-src="https://i.gyazo.com/ae73badb90b385307fd7344391e0b556.png" data-n="Capacidad respiratoria"></div><div class="cap">CAPACIDAD RESPIRATORIA<i>Pendiente de evaluación</i></div></div>
   </div>
  </div>
  <div class="pn"><div class="ph">Resistencia y recuperación</div>
@@ -165,21 +165,21 @@ td:last-child{color:#2c2e30}
 
 <section class="R">
  <div class="pn"><div class="ph">Condición física</div>
-  <div class="bar"><span>Fuerza</span><div class="trk"></div><span class="st">NO EVALUADO</span></div>
-  <div class="bar"><span>Resistencia</span><div class="trk"></div><span class="st">NO EVALUADO</span></div>
-  <div class="bar"><span>Agilidad</span><div class="trk"></div><span class="st">NO EVALUADO</span></div>
-  <div class="bar"><span>Coordinación</span><div class="trk"></div><span class="st">NO EVALUADO</span></div>
-  <div class="bar"><span>Flexibilidad</span><div class="trk"></div><span class="st">NO EVALUADO</span></div>
-  <div class="bar"><span>Velocidad</span><div class="trk"></div><span class="st">NO EVALUADO</span></div>
-  <div class="bar"><span>Sigilo</span><div class="trk"></div><span class="st">NO EVALUADO</span></div>
-  <div class="bar"><span>Precisión</span><div class="trk"></div><span class="st">NO EVALUADO</span></div>
+  <div class="bar"><span>Fuerza</span><div class="trk set" style="--v:55%"></div><span class="st">55%</span></div>
+  <div class="bar"><span>Resistencia</span><div class="trk set" style="--v:70%"></div><span class="st">70%</span></div>
+  <div class="bar"><span>Agilidad</span><div class="trk set" style="--v:35%"></div><span class="st">35%</span></div>
+  <div class="bar"><span>Coordinación</span><div class="trk set" style="--v:65%"></div><span class="st">65%</span></div>
+  <div class="bar"><span>Flexibilidad</span><div class="trk set" style="--v:55%"></div><span class="st">55%</span></div>
+  <div class="bar"><span>Velocidad</span><div class="trk set" style="--v:25%"></div><span class="st">25%</span></div>
+  <div class="bar"><span>Sigilo</span><div class="trk set" style="--v:45%"></div><span class="st">45%</span></div>
+  <div class="bar"><span>Precisión</span><div class="trk set" style="--v:55%"></div><span class="st">55%</span></div>
  </div>
  <div class="pn"><div class="ph">Aptitudes relevantes</div>
   <div class="bar"><span>Condición física</span><div class="trk on"></div><span class="st">DELGADA Y ENTRENADA</span></div>
-  <div class="bar"><span>Control corporal</span><div class="trk"></div><span class="st">EN EVALUACIÓN</span></div>
-  <div class="bar"><span>Adaptación al entorno</span><div class="trk"></div><span class="st">EN EVALUACIÓN</span></div>
-  <div class="bar"><span>Tolerancia al esfuerzo</span><div class="trk"></div><span class="st">NO EVALUADO</span></div>
-  <div class="bar"><span>Capacidad de recuperación</span><div class="trk"></div><span class="st">NO EVALUADO</span></div>
+  <div class="bar"><span>Control corporal</span><div class="trk set" style="--v:55%"></div><span class="st">55%</span></div>
+  <div class="bar"><span>Adaptación al entorno</span><div class="trk set" style="--v:50%"></div><span class="st">50%</span></div>
+  <div class="bar"><span>Tolerancia al esfuerzo</span><div class="trk set" style="--v:60%"></div><span class="st">60%</span></div>
+  <div class="bar"><span>Capacidad de recuperación</span><div class="trk set" style="--v:60%"></div><span class="st">60%</span></div>
  </div>
  <div class="pn"><div class="ph">Consideraciones</div>
   <ul class="med">
@@ -222,37 +222,6 @@ td:last-child{color:#2c2e30}
     requestAnimationFrame(f);
   }
   requestAnimationFrame(f);
-})();
-</script>
-<script>
-(function(){
-  var bars=[].slice.call(document.querySelectorAll('.bar')).filter(function(b){return !b.querySelector('.trk.on');});
-  var KEY='vt01-bars',saved={};
-  try{saved=JSON.parse(localStorage.getItem(KEY)||'{}');}catch(e){}
-  function save(){try{localStorage.setItem(KEY,JSON.stringify(saved));}catch(e){}}
-  bars.forEach(function(b,i){
-    var t=b.querySelector('.trk'),st=b.querySelector('.st'),orig=st.textContent,drag=false;
-    t.tabIndex=0;t.setAttribute('role','slider');t.setAttribute('aria-label',b.firstElementChild.textContent);
-    t.setAttribute('aria-valuemin','0');t.setAttribute('aria-valuemax','100');
-    t.title='Pulsa o arrastra para ajustar · doble clic para restablecer';
-    function set(v){
-      if(v===null){t.classList.remove('set');t.style.removeProperty('--v');st.textContent=orig;t.removeAttribute('aria-valuenow');delete saved[i];}
-      else{v=Math.max(0,Math.min(100,v));t.classList.add('set');t.style.setProperty('--v',v+'%');st.textContent=v+'%';t.setAttribute('aria-valuenow',v);saved[i]=v;}
-      save();
-    }
-    function fromX(e){var r=t.getBoundingClientRect();return Math.round((e.clientX-r.left)/r.width*20)*5;}
-    t.addEventListener('pointerdown',function(e){drag=true;t.setPointerCapture(e.pointerId);set(fromX(e));});
-    t.addEventListener('pointermove',function(e){if(drag)set(fromX(e));});
-    t.addEventListener('pointerup',function(){drag=false;});
-    t.addEventListener('dblclick',function(){set(null);});
-    t.addEventListener('keydown',function(e){
-      var v=saved[i];
-      if(e.key==='ArrowRight'||e.key==='ArrowUp'){e.preventDefault();set((v==null?0:v)+5);}
-      else if(e.key==='ArrowLeft'||e.key==='ArrowDown'){e.preventDefault();set((v==null?5:v)-5);}
-      else if(e.key==='Delete'||e.key==='Backspace'){set(null);}
-    });
-    if(saved[i]!=null)set(saved[i]);
-  });
 })();
 </script>
 </body>
