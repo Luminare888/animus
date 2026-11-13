@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Animus 2.0 · Evaluación física · Vittoria</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:wght@500;700&family=Barlow+Condensed:wght@400;500;600&display=swap">
+<style>
+:root{--paper:#e6e2da;--paper2:#d9d4ca;--steel:#8a8c8f;--coal:#16181a;--red:#4a1c25;--sepia:#8c7e60;--line:#b7b2a7;color-scheme:light}
+*{box-sizing:border-box;margin:0}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{color:var(--coal);font:14px/1.35 "Barlow Condensed","Arial Narrow",sans-serif;padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}
+.sheet{max-width:1050px;margin:0 auto;padding:18px;background:
+repeating-linear-gradient(0deg,transparent 0 31px,rgba(0,0,0,.035) 31px 32px),
+repeating-linear-gradient(90deg,transparent 0 31px,rgba(0,0,0,.035) 31px 32px),var(--paper);
+box-shadow:0 0 0 1px var(--steel);display:grid;gap:14px;grid-template-columns:minmax(0,26fr) minmax(0,46fr) minmax(0,28fr);grid-template-areas:"hl hc hr" "l c r"}
+header.h1{grid-area:hl;display:flex;gap:12px;align-items:center}
+header.h1 .logo{width:54px;height:63px;flex:none;background:transparent;}.logo img{object-fit:contain}.logo .add{font-size:0;padding:0 6px;border:0;background:transparent}.logo .add::before{content:"+";font-size:22px;color:var(--red)}
+.t{font:700 19px/1.15 Cinzel,"Trajan Pro",Georgia,serif;letter-spacing:.1em;text-transform:uppercase}
+.sm{font-size:12px;letter-spacing:.1em;color:#55575a}
+header.h2{grid-area:hc}
+header.h2 h1{font:700 50px/1 Cinzel,"Trajan Pro",Georgia,serif;letter-spacing:.04em}
+header.h2 h1 span{color:var(--red)}
+header.h2 p{color:var(--red);font:500 15px Cinzel,Georgia,serif;letter-spacing:.14em}
+header.h3{grid-area:hr;text-align:right;font-size:12px;letter-spacing:.1em;color:#444}
+header.h3 b{display:block;height:26px;margin:0 0 4px auto;width:90px;background:repeating-linear-gradient(90deg,var(--coal) 0 2px,transparent 2px 4px,var(--coal) 4px 5px,transparent 5px 8px)}
+.L{grid-area:l}.C{grid-area:c}.R{grid-area:r}
+.L,.C,.R{display:flex;flex-direction:column;gap:12px;min-width:0}
+.bot{grid-area:b;grid-column:2/3}
+.pn{border:1px solid var(--steel);position:relative;padding:10px 12px;background:rgba(255,255,255,.28)}
+.pn::before,.pn::after{content:"";position:absolute;width:10px;height:10px;border:2px solid var(--red)}
+.pn::before{left:-1px;top:-1px;border-right:0;border-bottom:0}.pn::after{right:-1px;bottom:-1px;border-left:0;border-top:0}
+.ph{display:inline-block;background:var(--coal);color:#eee;padding:3px 22px 3px 10px;font:600 13px Cinzel,Georgia,serif;letter-spacing:.1em;text-transform:uppercase;margin:-11px 0 10px -13px;width:max-content;max-width:calc(100% + 13px);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;clip-path:polygon(0 0,100% 0,calc(100% - 10px) 100%,0 100%);border-left:4px solid var(--red)}
+.slot{position:relative;background:linear-gradient(135deg,#bdb9b0,#a29e95);overflow:hidden;display:flex;align-items:center;justify-content:center;color:#eee}
+.slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.slot .add{font-size:11px;letter-spacing:.12em;color:#3a3b3d;background:rgba(230,226,218,.8);padding:3px 7px;border:1px dashed var(--coal);position:relative;z-index:1}
+.slot.full .add{display:none}
+
+.slot .sil{position:absolute;inset:6%;width:88%;height:88%;opacity:.5}
+.slot.full .sil{display:none}
+.cap{font-size:12px;letter-spacing:.06em;border-left:3px solid var(--red);padding-left:6px;margin-top:4px;line-height:1.15}
+.cap i{display:block;font-style:normal;color:#666;font-size:11px}
+.port{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.port .slot{aspect-ratio:4/5}
+.mini{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.mini .slot{aspect-ratio:1}
+table{width:100%;border-collapse:collapse}
+td{padding:4px 2px;border-bottom:1px solid var(--line);font-size:13px;letter-spacing:.05em}
+td:first-child{text-transform:uppercase;width:42%}
+td:last-child{color:#2c2e30}
+.note{font:500 15px/1.5 "Cormorant Garamond",Georgia,serif;text-align:justify}
+.lock{display:inline-block;width:11px;height:9px;background:var(--red);margin-right:6px;position:relative}
+.body{display:grid;grid-template-columns:minmax(0,.62fr) minmax(0,1.3fr) minmax(0,1.3fr) minmax(0,.62fr);gap:8px;align-items:stretch}
+.fig .slot{aspect-ratio:1/2.1;width:100%;background:linear-gradient(#cfcac0,#c2bdb2);color:var(--coal);border-color:var(--steel)}
+.lc{display:flex;flex-direction:column;justify-content:space-between;padding:8px 0 24px;gap:6px}
+.lbl{position:relative;font-size:11px;letter-spacing:.05em;line-height:1.15;background:rgba(255,255,255,.35);padding:2px 5px;border-left:2px solid var(--red)}
+.lbl em{display:block;font-style:normal;color:var(--red);font-size:10px}
+.lbl::after{content:"";position:absolute;top:50%;height:1px;width:8px;background:var(--red)}
+.lc.l .lbl::after{right:-9px}.lc.r .lbl::after{left:-9px}
+.tag{text-align:center;font-size:12px;letter-spacing:.14em;margin-top:4px;height:16px}
+.cap{min-height:2.6em;overflow-wrap:anywhere}
+.port .slot img{object-position:center 20%}
+.bar{display:grid;grid-template-columns:34% 1fr 28%;gap:8px;align-items:center;padding:4px 0;border-bottom:1px solid var(--line);font-size:13px;letter-spacing:.05em;text-transform:uppercase}
+.trk{height:6px;background:var(--paper2);border:1px solid var(--steel);position:relative}
+.trk::before{content:"";position:absolute;left:0;top:-1px;bottom:-1px;width:14%;background:repeating-linear-gradient(45deg,var(--red) 0 3px,#8a5560 3px 6px)}
+.trk.on::before{width:100%;background:var(--red)}
+.trk{cursor:ew-resize;touch-action:none}.trk.on{cursor:default}.trk::after{content:"";position:absolute;inset:-8px 0}
+.trk.set::before{width:var(--v);background:var(--red)}.trk:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.st{color:#444;font-size:12px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.grid4 .slot{aspect-ratio:1.1}
+.med li{margin:0 0 4px 16px;font-size:13px;letter-spacing:.04em}
+.med li::marker{color:var(--red)}
+.fin{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);margin-top:8px;padding-top:6px;color:var(--red);letter-spacing:.1em;font-size:13px;gap:8px}
+.fin i{flex:1;max-width:110px;height:8px;background:repeating-linear-gradient(-45deg,var(--red) 0 4px,transparent 4px 8px)}
+.ecg{border:1px solid var(--line);background:rgba(255,255,255,.3);overflow:hidden}.ecg svg{display:block}.ill{display:block;margin:4px 0 8px;font-size:10px;letter-spacing:.12em;color:var(--red);line-height:1.3}
+.vit{height:90px;width:100%}
+@media(max-width:980px){.sheet{grid-template-columns:1fr;grid-template-areas:"hl" "hc" "hr" "l" "c" "r" "b";padding:12px}header.h3{text-align:left}header.h3 b{margin-left:0}.bot{grid-column:auto}.body{min-height:0}header.h2 h1{font-size:36px}}
+@media(max-width:560px){.grid4,.mini{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){.body{grid-template-columns:1fr 1fr}.fig{grid-row:1}.lc{grid-row:2;padding:0}.lc.l .lbl::after,.lc.r .lbl::after{display:none}}
+</style>
+</head>
+<body>
+<!-- IMÁGENES: cada recuadro lleva data-src="". Pega el enlace de tu imagen entre las comillas, por ejemplo:
+     data-src="https://tu-enlace.com/imagen.jpg"
+     (también sirve una ruta de archivo). Si lo dejas vacío, el recuadro muestra "+ AÑADIR IMAGEN". -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<symbol id="front" viewBox="0 0 100 210"><g fill="none" stroke="currentColor" stroke-width="1.2"><ellipse cx="50" cy="15" rx="8" ry="10"/><path d="M46 25v7M54 25v7M46 32C35 34 28 37 26 46l-5 48 4 2 7-40M54 32c11 2 18 5 20 14l5 48-4 2-7-40M33 40l3 36 2 22h24l2-22 3-36M38 98c-4 30-5 60-4 98l-3 8h11l3-8 3-70 3 70 3 8h11l-3-8c1-38 0-68-4-98"/><path d="M50 32v66M40 54h20M41 70h18" stroke-width=".6"/></g></symbol>
+<symbol id="back" viewBox="0 0 100 210"><g fill="none" stroke="currentColor" stroke-width="1.2"><ellipse cx="50" cy="15" rx="8" ry="10"/><path d="M46 25v7M54 25v7M46 32C35 34 28 37 26 46l-5 48 4 2 7-40M54 32c11 2 18 5 20 14l5 48-4 2-7-40M33 40l3 36 2 22h24l2-22 3-36M38 98c-4 30-5 60-4 98l-3 8h11l3-8 3-70 3 70 3 8h11l-3-8c1-38 0-68-4-98"/></g><path d="M50 26v72" stroke="currentColor" stroke-width="1.6" stroke-dasharray="2 2" fill="none"/></symbol>
+<symbol id="cred" viewBox="0 0 60 70"><path d="M30 3C22 22 12 40 4 64c8-8 14-12 22-14l-4 14h16l-4-14c8 2 14 6 22 14C48 40 38 22 30 3z" fill="none" stroke="#4a1c25" stroke-width="4" stroke-linejoin="round"/><path d="M30 20c-3 12-6 20-8 30h16c-2-10-5-18-8-30z" fill="#4a1c25"/></symbol>
+</defs>
+</svg>
+
+<main class="sheet">
+<header class="h1"><div class="slot logo" data-src="https://i.imgur.com/vxQtSwg.png" data-n="Símbolo o logo"></div><div><div class="t">Animus 2.0<br>Evaluación médica</div><div class="sm">Sujeto VT-01 · Archivo de Vittoria</div></div></header>
+<header class="h2"><h1>VITTO<span>RIA</span></h1><p>Evaluación física completa</p><div class="sm">Análisis corporal, rasgos distintivos, condición operativa</div></header>
+<header class="h3"><b></b>Acceso restringido<br>Uso exclusivo de Vittoria</header>
+
+<section class="L">
+ <div class="port">
+  <div><div class="slot" data-src="https://i.imgur.com/FKoHnjl.png" data-n="Retrato sin máscara"></div><div class="cap">VISTA FRONTAL<i>Sin máscara</i></div></div>
+  <div><div class="slot" data-src="https://i.imgur.com/EgwCrM8.jpeg" data-n="Retrato con máscara"></div><div class="cap">VISTA CON MÁSCARA<i>Identidad operativa</i></div></div>
+ </div>
+ <div class="mini">
+  <div><div class="slot" data-src="https://i.gyazo.com/33de643964f4d8bb7d78063dbbad8edd.png" data-n="Detalle de los ojos"></div><div class="cap">OJOS<i>Grises</i></div></div>
+  <div><div class="slot" data-src="https://i.imgur.com/omJD1EY.jpeg" data-n="Detalle de la cicatriz"></div><div class="cap">CICATRIZ<i>Detalle facial</i></div></div>
+  <div><div class="slot" data-src="https://i.gyazo.com/ddbbe111ef86b020fecb0be03525d327.jpg" data-n="Vista posterior del cabello"></div><div class="cap">CABELLO<i>Vista posterior</i></div></div>
+  <div><div class="slot" data-src="https://i.gyazo.com/faaea1b14e69e4a7bbc40fbcb03d8014.png" data-n="Vista lateral del rostro"></div><div class="cap">PERFIL<i>Vista lateral</i></div></div>
+ </div>
+ <div class="pn"><div class="ph">Datos</div>
+  <table>
+   <tr><td>Estatura</td><td>1.65</td></tr>
+   <tr><td>Peso</td><td>52</td></tr>
+   <tr><td>Complexión</td><td>DELGADA Y ENTRENADA</td></tr>
+   <tr><td>Color de ojos</td><td>GRISES</td></tr>
+   <tr><td>Color de cabello</td><td>RUBIO BLANQUECINO</td></tr>
+   <tr><td>Rasgos distintivos</td><td>CICATRIZ FACIAL</td></tr>
+   <tr><td>Mano dominante</td><td>DIESTRA</td></tr>
+   <tr><td>Marcas adicionales</td><td>MARCAS EN LOS BRAZOS</td></tr>
+  </table>
+ </div>
+ <div class="pn"><div class="ph">Notas del Animus</div>
+  <p class="note"><span class="lock" title="Acceso restringido"></span>El sujeto de evaluación presenta una capacidad intelectual alta, su sistema nervioso parece intacto. Presenta distintas alergias y sensibilidades en la piel, también intolerancias alimenticias como a la acidez de la naranja. 
+  Alta capacidad de tolerancia al dolor, sometida al entrenamiento más duro de la Hermandad. Fue sometida a la edad de tres años a una intervención quirúrgica para extraer sus vegetaciones, tejido linfoide situado en la parte baja de la nariz. Presenta problemas emocionales en proceso de adaptación.</p>
+ </div>
+</section>
+
+<section class="C">
+ <div class="body">
+  <div class="lc l">
+   <span class="lbl">CABEZA<em>Cicatriz facial</em></span>
+   <span class="lbl">HOMBROS<em>Marcas</em></span>
+   <span class="lbl">ESTRUCTURA<em>Delgada y tonificada</em></span>
+   <span class="lbl">MOVILIDAD<em>Normal</em></span>
+   <span class="lbl">EXTREMIDADES<em>Adecuado</em></span>
+  </div>
+  <div class="fig"><div class="slot" data-src="https://i.imgur.com/yde5i9y.png" data-n="Silueta corporal frontal"><svg class="sil" fill="none"><use href="#front" style="color:#8a8c8f"/></svg></div><div class="tag">VISTA ANTERIOR</div></div>
+  <div class="fig"><div class="slot" data-src="https://i.imgur.com/X8lzskO.png" data-n="Silueta corporal posterior"><svg class="sil" fill="none"><use href="#back" style="color:#8a8c8f"/></svg></div><div class="tag">VISTA POSTERIOR</div></div>
+  <div class="lc r">
+   <span class="lbl">COLUMNA<em>Adecuado</em></span>
+   <span class="lbl">COORDINACIÓN<em>Alta</em></span>
+   <span class="lbl">RESISTENCIA<em>Alta</em></span>
+  </div>
+ </div>
+ <div class="pn"><div class="ph">Análisis detallado</div>
+  <div class="grid4">
+   <div><div class="slot" data-src="https://i.gyazo.com/617a3180caf9cd557561e6784291eadd.png" data-n="Estructura ósea"></div><div class="cap">ESTRUCTURA ÓSEA<i>Normal</i></div></div>
+   <div><div class="slot" data-src="https://i.gyazo.com/025a71300e1f9e6494d1249b56425a5e.png" data-n="Desarrollo muscular"></div><div class="cap">DESARROLLO MUSCULAR<i>Alto</i></div></div>
+   <div><div class="slot" data-src="https://i.gyazo.com/eab0db2bcda313bb7585d12d05ce6648.png" data-n="Movilidad articular"></div><div class="cap">MOVILIDAD ARTICULAR<i>Normal</i></div></div>
+   <div><div class="slot" data-src="https://i.gyazo.com/ae73badb90b385307fd7344391e0b556.png" data-n="Capacidad respiratoria"></div><div class="cap">CAPACIDAD RESPIRATORIA<i>Débil debido a condición asmática</i></div></div>
+  </div>
+ </div>
+ <div class="pn"><div class="ph">Resistencia y recuperación</div>
+  
+  <div class="ecg"><svg class="vit" viewBox="0 0 300 90" preserveAspectRatio="none" role="img" aria-label="Gráfico ilustrativo de señal biométrica"><path d="M0 22h300M0 45h300M0 68h300M50 0v90M100 0v90M150 0v90M200 0v90M250 0v90" stroke="#b7b2a7" stroke-width=".6" vector-effect="non-scaling-stroke" fill="none"/><g id="ecgG"><path id="ecgP" fill="none" stroke="#4a1c25" stroke-width="1.6" stroke-linejoin="round" vector-effect="non-scaling-stroke"/></g></svg></div><span class="ill">GRÁFICO SIMULTÁNEO<br>CON VALORES REALES</span>
+  <table>
+   <tr><td>Ritmo cardíaco en reposo</td><td>40–60 LPM</td></tr>
+   <tr><td>Recuperación tras el esfuerzo</td><td>60-70 %</td></tr>
+   <tr><td>Resistencia física</td><td>NOTABLE</td></tr>
+   <tr><td>Observaciones</td><td>ARRITMIA LEVE</td></tr>
+  </table>
+ </div>
+</section>
+
+<section class="R">
+ <div class="pn"><div class="ph">Condición física</div>
+  <div class="bar"><span>Fuerza</span><div class="trk"></div><span class="st">NO EVALUADO</span></div>
+  <div class="bar"><span>Resistencia</span><div class="trk"></div><span class="st">NO EVALUADO</span></div>
+  <div class="bar"><span>Agilidad</span><div class="trk"></div><span class="st">NO EVALUADO</span></div>
+  <div class="bar"><span>Coordinación</span><div class="trk"></div><span class="st">NO EVALUADO</span></div>
+  <div class="bar"><span>Flexibilidad</span><div class="trk"></div><span class="st">NO EVALUADO</span></div>
+  <div class="bar"><span>Velocidad</span><div class="trk"></div><span class="st">NO EVALUADO</span></div>
+  <div class="bar"><span>Sigilo</span><div class="trk"></div><span class="st">NO EVALUADO</span></div>
+  <div class="bar"><span>Precisión</span><div class="trk"></div><span class="st">NO EVALUADO</span></div>
+ </div>
+ <div class="pn"><div class="ph">Aptitudes relevantes</div>
+  <div class="bar"><span>Condición física</span><div class="trk on"></div><span class="st">DELGADA Y ENTRENADA</span></div>
+  <div class="bar"><span>Control corporal</span><div class="trk"></div><span class="st">EN EVALUACIÓN</span></div>
+  <div class="bar"><span>Adaptación al entorno</span><div class="trk"></div><span class="st">EN EVALUACIÓN</span></div>
+  <div class="bar"><span>Tolerancia al esfuerzo</span><div class="trk"></div><span class="st">NO EVALUADO</span></div>
+  <div class="bar"><span>Capacidad de recuperación</span><div class="trk"></div><span class="st">NO EVALUADO</span></div>
+ </div>
+ <div class="pn"><div class="ph">Consideraciones</div>
+  <ul class="med">
+   <li>Presenta múltiples alergias.</li>
+   <li>Requiere una alimentación controlada.</li>
+   <li>Su condición física debe evaluarse teniendo en cuenta sus restricciones médicas.</li>
+   <li>Lesiones de enfrentamientos actuales.</li>
+   <li>Cicatriz facial con relevancia psicológica personal.</li>
+   <li>Uso estricto de la máscara por estado mental indisciplinado.</li>
+  </ul>
+  <div class="fin"><span>ESTADO DE LA EVALUACIÓN: PROGRESA ADECUADAMENTE</span><i></i></div>
+ </div>
+</section>
+
+</main>
+
+<script>
+(function(){
+  document.querySelectorAll('.slot').forEach(function(s){
+    var a=document.createElement('span');a.className='add';a.textContent='+ AÑADIR IMAGEN';s.appendChild(a);
+    if(s.getAttribute('data-src'))put(s,s.getAttribute('data-src'));s.setAttribute('aria-label',s.dataset.n);
+  });
+  function put(s,src){clear(s);var i=new Image();i.alt=s.dataset.n;i.src=src;s.insertBefore(i,s.firstChild);s.classList.add('full');}
+  function clear(s){var i=s.querySelector('img');if(i)i.remove();s.classList.remove('full');}
+})();
+</script>
+<script>
+(function(){
+  var p=document.getElementById('ecgP'),g=document.getElementById('ecgG');
+  if(!p||!g)return;
+  var beat='h30l4-6 4 6h8l3 4 4-34 4 46 3-16h10l5-8 6 8h19',d='M0 50';
+  for(var i=0;i<5;i++)d+=beat;
+  p.setAttribute('d',d);
+  if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var t0=null,speed=45;
+  function f(t){
+    if(t0===null)t0=t;
+    var x=((t-t0)/1000*speed)%100;
+    g.setAttribute('transform','translate('+(-x).toFixed(2)+' 0)');
+    requestAnimationFrame(f);
+  }
+  requestAnimationFrame(f);
+})();
+</script>
+<script>
+(function(){
+  var bars=[].slice.call(document.querySelectorAll('.bar')).filter(function(b){return !b.querySelector('.trk.on');});
+  var KEY='vt01-bars',saved={};
+  try{saved=JSON.parse(localStorage.getItem(KEY)||'{}');}catch(e){}
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(saved));}catch(e){}}
+  bars.forEach(function(b,i){
+    var t=b.querySelector('.trk'),st=b.querySelector('.st'),orig=st.textContent,drag=false;
+    t.tabIndex=0;t.setAttribute('role','slider');t.setAttribute('aria-label',b.firstElementChild.textContent);
+    t.setAttribute('aria-valuemin','0');t.setAttribute('aria-valuemax','100');
+    t.title='Pulsa o arrastra para ajustar · doble clic para restablecer';
+    function set(v){
+      if(v===null){t.classList.remove('set');t.style.removeProperty('--v');st.textContent=orig;t.removeAttribute('aria-valuenow');delete saved[i];}
+      else{v=Math.max(0,Math.min(100,v));t.classList.add('set');t.style.setProperty('--v',v+'%');st.textContent=v+'%';t.setAttribute('aria-valuenow',v);saved[i]=v;}
+      save();
+    }
+    function fromX(e){var r=t.getBoundingClientRect();return Math.round((e.clientX-r.left)/r.width*20)*5;}
+    t.addEventListener('pointerdown',function(e){drag=true;t.setPointerCapture(e.pointerId);set(fromX(e));});
+    t.addEventListener('pointermove',function(e){if(drag)set(fromX(e));});
+    t.addEventListener('pointerup',function(){drag=false;});
+    t.addEventListener('dblclick',function(){set(null);});
+    t.addEventListener('keydown',function(e){
+      var v=saved[i];
+      if(e.key==='ArrowRight'||e.key==='ArrowUp'){e.preventDefault();set((v==null?0:v)+5);}
+      else if(e.key==='ArrowLeft'||e.key==='ArrowDown'){e.preventDefault();set((v==null?5:v)-5);}
+      else if(e.key==='Delete'||e.key==='Backspace'){set(null);}
+    });
+    if(saved[i]!=null)set(saved[i]);
+  });
+})();
+</script>
+</body>
+</html>
